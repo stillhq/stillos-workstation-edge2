@@ -4,7 +4,7 @@ FROM scratch AS ctx
 
 COPY files/system /system_files/
 COPY files/scripts /build_files/
-RUN chmod +x /build_files/*.sh
+RUN /bin/chmod +x /build_files/*.sh
 COPY *.pub /keys/
 
 # Base Image
