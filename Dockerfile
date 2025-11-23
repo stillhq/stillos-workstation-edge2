@@ -3,7 +3,7 @@
 FROM scratch AS ctx
 
 COPY files/system /system_files/
-COPY files/scripts /build_files/
+COPY --chmod=0755 files/scripts /build_files/
 COPY *.pub /keys/
 
 # Base Image
@@ -13,7 +13,6 @@ ARG IMAGE_NAME
 ARG IMAGE_REGISTRY
 ARG VARIANT
 
-RUN /bin/chmod +x /ctx/build_files/*.sh
 RUN --mount=type=tmpfs,dst=/opt \
     --mount=type=tmpfs,dst=/tmp \
     --mount=type=bind,from=ctx,source=/,target=/ctx \
