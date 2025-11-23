@@ -15,7 +15,8 @@ outputs:
     value:  ${{ steps.set.outputs.REGISTRY }}
   REGISTRY_USER:
     description: "The user for the container registry"
-    value: ${{ steps.set.outputs.REGISTRY_USER }}
+    value: stillhq+github_ci
+    #value: ${{ steps.set.outputs.REGISTRY_USER }}
   PLATFORMS:
     description: "The platforms to build for"
     value: ${{ steps.set.outputs.PLATFORMS }}
