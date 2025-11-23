@@ -11,7 +11,6 @@ printf "::endgroup::\n"
 
 for script in $(find ${BUILD_SCRIPTS_PATH} -maxdepth 1 -iname "*-*.sh" -type f | sort --sort=human-numeric); do
   printf "::group:: === $(basename "$script") ===\n"
-  chmod +x $(realpath $script)
   "$(realpath $script)"
   printf "::endgroup::\n"
 done
