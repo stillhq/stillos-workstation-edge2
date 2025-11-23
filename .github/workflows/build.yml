@@ -42,7 +42,7 @@ jobs:
     uses: AlmaLinux/atomic-ci/.github/workflows/build-image.yml@v10
     needs: set-env
     with:
-      image-description: "My AlmaLinux Atomic Respin"
+      image-description: "stillOS Main Base Image"
       containerfile: Dockerfile
       image-name: "${{ needs.set-env.outputs.IMAGE_NAME }}"
       previous-image: "${{ needs.set-env.outputs.IMAGE_REF }}:latest"
@@ -53,7 +53,7 @@ jobs:
       REGISTRY: ${{ needs.set-env.outputs.REGISTRY }}
       REGISTRY_USER: ${{ needs.set-env.outputs.REGISTRY_USER }}
     secrets:
-      REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REGISTRY_TOKEN: ${{ secrets.QUAY_PASSWORD }}
       SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
     permissions:
       contents: read
@@ -70,7 +70,7 @@ jobs:
 
     steps:
       - name: Login to Container Registry
-        run: echo ${{ secrets.GITHUB_TOKEN }} | podman login -u ${{ needs.set-env.outputs.REGISTRY_USER }} --password-stdin ${{ needs.set-env.outputs.REGISTRY }}
+        run: echo ${{ secrets.QUAY_PASSWORD }} | podman login -u ${{ needs.set-env.outputs.REGISTRY_USER }} --password-stdin ${{ needs.set-env.outputs.REGISTRY }}
 
       - name: Test container
         run: |

@@ -24,7 +24,8 @@ outputs:
     value: ${{ steps.set.outputs.IMAGE_PATH }}
   IMAGE_NAME:
     description: "The name of the image"
-    value: ${{ steps.set.outputs.IMAGE_NAME }}
+    value: stillos-workstation-edge
+    # value: ${{ steps.set.outputs.IMAGE_NAME }}
   IMAGE_REF:
     description: "The full reference to the image in the registry"
     value: ${{ steps.set.outputs.IMAGE_REF }}
@@ -46,8 +47,8 @@ runs:
           echo "LATEST_TAG=latest" >> $GITHUB_OUTPUT
         fi
 
-        REGISTRY=ghcr.io
-        REGISTRY_USER=${{ github.actor }}
+        REGISTRY=quay.io
+        REGISTRY_USER=stillhq+github_ci
         IMAGE_PATH=${{ github.repository_owner }}
         IMAGE_NAME=${{ github.event.repository.name }}
         PLATFORMS="amd64"
