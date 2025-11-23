@@ -9,12 +9,11 @@ COPY *.pub /keys/
 # Base Image
 FROM quay.io/almalinuxorg/atomic-desktop-gnome:10@sha256:6867decad7ca92b07421e7c89351c72a30fa772c698bc2521729effac04552f0
 
-RUN /bin/chmod +x /build_files/*.sh
-
 ARG IMAGE_NAME
 ARG IMAGE_REGISTRY
 ARG VARIANT
 
+RUN /bin/chmod +x /ctx/build_files/*.sh
 RUN --mount=type=tmpfs,dst=/opt \
     --mount=type=tmpfs,dst=/tmp \
     --mount=type=bind,from=ctx,source=/,target=/ctx \
