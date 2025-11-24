@@ -45,7 +45,7 @@ jobs:
       REGISTRY: ${{ needs.set-env.outputs.REGISTRY }}
       REGISTRY_USER: ${{ needs.set-env.outputs.REGISTRY_USER }}
       upload-to-cloudflare: true
-      bucket: ${{ secrets.R2_BUCKET }}
+      # bucket: ${{ secrets.R2_BUCKET }}
     secrets:
       REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
