@@ -8,6 +8,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
 jobs:
   set-env:
     if: github.repository != 'AlmaLinux/atomic-respin-template'
@@ -46,9 +51,6 @@ jobs:
       REGISTRY_USER: ${{ needs.set-env.outputs.REGISTRY_USER }}
       upload-to-cloudflare: true
       # bucket: ${{ secrets.R2_BUCKET }}
-    permissions:
-      packages: write
-      id-token: write
     secrets:
       REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
