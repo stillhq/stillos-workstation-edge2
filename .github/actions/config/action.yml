@@ -25,8 +25,7 @@ outputs:
     value: ${{ steps.set.outputs.IMAGE_PATH }}
   IMAGE_NAME:
     description: "The name of the image"
-    value: stillos-workstation-edge
-    # value: ${{ steps.set.outputs.IMAGE_NAME }}
+    value: ${{ steps.set.outputs.IMAGE_NAME }}
   IMAGE_REF:
     description: "The full reference to the image in the registry"
     value: ${{ steps.set.outputs.IMAGE_REF }}
@@ -51,7 +50,7 @@ runs:
         REGISTRY=quay.io
         REGISTRY_USER=stillhq+github_ci
         IMAGE_PATH=${{ github.repository_owner }}
-        IMAGE_NAME=${{ github.event.repository.name }}
+        IMAGE_NAME=stillos-workstation-edge
         PLATFORMS="amd64"
 
         echo "REGISTRY=${REGISTRY}" >> $GITHUB_OUTPUT
