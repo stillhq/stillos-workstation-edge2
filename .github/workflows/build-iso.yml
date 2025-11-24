@@ -39,7 +39,7 @@ jobs:
   build-iso:
     name: Build ISO
     needs: [set-env]
-    uses: stillhq/atomic-ci/.github/workflows/build-iso.yml
+    uses: stillhq/atomic-ci/.github/workflows/build-iso.yml@main
     with:
       image-name: "${{ needs.set-env.outputs.IMAGE_NAME }}"
       image: "${{ needs.set-env.outputs.IMAGE_REF }}:${{ needs.set-env.outputs.LATEST_TAG }}"
