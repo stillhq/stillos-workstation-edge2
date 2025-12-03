@@ -13,6 +13,8 @@ echo "Swapping GNOME"
 dnf remove -y gnome-shell-extension-background-logo
 dnf swap -y gnome-shell https://download.copr.fedorainfracloud.org/results/still/stillos-alma/epel-10-x86_64/09714085-gnome-shell/gnome-shell-47.4-3.el10.still.1.x86_64.rpm
 dnf swap -y mutter https://download.copr.fedorainfracloud.org/results/still/stillos-alma/epel-10-x86_64/09686403-mutter/mutter-47.5-8.el10.x86_64.rpm
+dnf swap -y gnome-session-wayland-session stillos-session
+dnf swap -y ptyxis still-terminal
 
 echo "Installing stillOS Packages"
 dnf install -y https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/34.0/1.el10_1/noarch/gnome-shell-extension-just-perfection-34.0-1.el10_1.noarch.rpm
