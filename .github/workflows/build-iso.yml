@@ -36,6 +36,9 @@ jobs:
         with:
           SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
 
+      - name: Clear Podman Cache
+        run: sudo podman system prune -af
+
   build-iso:
     name: Build ISO
     needs: [set-env]
