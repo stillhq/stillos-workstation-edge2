@@ -2,7 +2,7 @@
 
 set -xeuo pipefail
 
-sudo dnf install -y still-bundler
+dnf install -y still-bundler
 
 still-bundler ci-build \
     org.gnome.Epiphany \
