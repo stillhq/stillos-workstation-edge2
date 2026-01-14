@@ -49,7 +49,7 @@ jobs:
       previous-image: "${{ needs.set-env.outputs.IMAGE_REF }}:latest"
       upstream-public-key: atomic-desktop.pub
       platforms: ${{ needs.set-env.outputs.PLATFORMS }}
-      skip-maximize-build-space: true
+      skip-maximize-build-space: false
       image-path: ${{ needs.set-env.outputs.IMAGE_PATH }}
       REGISTRY: ${{ needs.set-env.outputs.REGISTRY }}
       REGISTRY_USER: ${{ needs.set-env.outputs.REGISTRY_USER }}

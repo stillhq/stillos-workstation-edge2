@@ -50,7 +50,7 @@ runs:
         REGISTRY=quay.io
         REGISTRY_USER=stillhq+github_ci
         IMAGE_PATH=${{ github.repository_owner }}
-        IMAGE_NAME=stillos-workstation-edge
+        IMAGE_NAME=stillhq/stillos-workstation-edge
         PLATFORMS="amd64"
 
         echo "REGISTRY=${REGISTRY}" >> $GITHUB_OUTPUT
