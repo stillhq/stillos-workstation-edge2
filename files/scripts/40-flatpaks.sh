@@ -19,4 +19,5 @@ still-bundler ci-build \
     com.rafaelmardojai.Blanket \
     org.onlyoffice.desktopeditors \
     app.drey.Warp \
+    --install-systemd-service \
     --i-understand-this-will-reset-flatpak
