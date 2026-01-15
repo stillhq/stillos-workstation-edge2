@@ -18,5 +18,5 @@ still-bundler ci-build \
     io.gitlab.news_flash.NewsFlash \
     com.rafaelmardojai.Blanket \
     org.onlyoffice.desktopeditors \
-    app.drey.Warp
+    app.drey.Warp \
     --i-understand-this-will-reset-flatpak
