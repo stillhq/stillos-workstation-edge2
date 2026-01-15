@@ -25,7 +25,7 @@ POLICY_FILE="${CONTAINER_DIR}/policy.json"
 # that the default policy is set to reject.
 # We'll also add a permissive policy for all the local transports.
 jq --arg image_registry "${IMAGE_REGISTRY}" \
-   --arg image_name "${IMAGE_NAME}" \
+   --arg image_name "stillhq/${IMAGE_NAME}" \
    --arg pki_path "${CONTAINER_PKI}/${IMAGE_NAME_FILE}.pub" \
    '.transports.docker |=
     { ($image_registry + "/" + $image_name): [
