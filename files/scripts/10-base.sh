@@ -1,6 +1,6 @@
 set -xeuo pipefail
 
-# dnf upgrade -y
+dnf upgrade -y
 
 dnf install -y 'dnf-command(config-manager)'
 dnf config-manager --set-enabled crb
