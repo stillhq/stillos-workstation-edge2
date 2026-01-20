@@ -6,7 +6,7 @@ set -xeuo pipefail
 
 cat << 'EOF' > /etc/os-release
 NAME="stillOS"
-VERSION="10 Snapshot 26m1a (The Bloom)
+VERSION="10 Snapshot 26m1a (The Bloom)"
 ID="stillos"
 ID_LIKE="almalinux rhel centos fedora"
 VERSION_ID="10"
