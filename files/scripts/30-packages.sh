@@ -17,18 +17,23 @@ dnf swap -y gnome-session-wayland-session stillos-session
 dnf swap -y ptyxis still-terminal
 
 echo "Installing stillOS Packages"
-dnf install -y https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/34.0/1.el10_1/noarch/gnome-shell-extension-just-perfection-34.0-1.el10_1.noarch.rpm
+dnf install -y https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/35.0/1.el10_2/noarch/gnome-shell-extension-just-perfection-35.0-1.el10_2.noarch.rpm
 dnf install -y rsms-inter-fonts rsms-inter-vf-fonts still-control stillcenter swai swai-inst stillcount-client adw-gtk3-theme gnome-shell-extension-desktop-icons-ng gnome-shell-extension-appindicator stillexplore  gnome-shell-extension-sam quick-setup
 
 echo "Installing misc packages..."
 dnf install -y git lorax \
     distrobox \
-    fuse
+    fuse \
+    xdg-utils
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
-dnf remove firefox
+dnf remove firefox -y
+dnf config-manager --save --setopt=exclude=firefox
 dnf autoremove
+
+# Disable Command Not Found PackageKit
+sed -i -e 's/^SoftwareSourceSearch=true/SoftwareSourceSearch=false/' /etc/PackageKit/CommandNotFound.conf
 
 systemctl disable rpm-ostree-countme.service
 systemctl enable stillcount.service
