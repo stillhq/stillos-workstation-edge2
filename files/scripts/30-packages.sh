@@ -24,7 +24,8 @@ echo "Installing misc packages..."
 dnf install -y git lorax \
     distrobox \
     fuse \
-    xdg-utils
+    xdg-utils \
+    glib2-devel
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
