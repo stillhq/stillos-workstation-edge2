@@ -4,9 +4,9 @@ contents = """
 
 autopart --nohome --fstype=ext4
 zerombr
-clearpart --none --initlabel
+clearpart --none --initlabel --nolvm
 timezone America/Los_Angeles --utc
-network --hostname stillos --bootproto=dhcp --device=link --activate
+network --hostname stillos --bootproto=dhcp --device=link --activate --onboot=yes
 rootpw --lock
 
 %addon com_redhat_kdump --disable

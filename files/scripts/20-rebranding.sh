@@ -18,3 +18,6 @@ curl \
     --retry 3 \
     -o /etc/flatpak/remotes.d/flathub.flatpakrepo \
     https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Enable sudo password bubbles
+echo 'Defaults pwfeedback' | sudo tee /etc/sudoers.d/pwfeedback
