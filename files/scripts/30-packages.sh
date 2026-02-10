@@ -12,7 +12,7 @@ dnf install -y --nobest  \
 echo "Swapping GNOME"
 dnf remove -y gnome-shell-extension-background-logo
 dnf swap -y gnome-shell https://download.copr.fedorainfracloud.org/results/still/stillos-alma/epel-10-x86_64/09714085-gnome-shell/gnome-shell-47.4-3.el10.still.1.x86_64.rpm
-dnf swap -y mutter https://download.copr.fedorainfracloud.org/results/still/stillos-alma/epel-10-x86_64/09686403-mutter/mutter-47.5-8.el10.x86_64.rpm
+dnf swap -y mutter https://download.copr.fedorainfracloud.org/results/still/stillos-alma/epel-10-x86_64/10110199-mutter/mutter-47.5-8.el10.x86_64.rpm
 dnf swap -y gnome-session-wayland-session stillos-session
 dnf swap -y ptyxis still-terminal
 
@@ -43,7 +43,7 @@ dnf autoremove
 sed -i -e 's/^SoftwareSourceSearch=true/SoftwareSourceSearch=false/' /etc/PackageKit/CommandNotFound.conf
 
 # Turn on ZSH
-sudo sed -i 's|^SHELL=.*|SHELL=/bin/zsh|' /etc/default/useradd
+sed -i 's|^SHELL=.*|SHELL=/bin/zsh|' /etc/default/useradd
 
 systemctl disable rpm-ostree-countme.service
 systemctl enable stillcount.service
