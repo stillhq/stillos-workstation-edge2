@@ -18,14 +18,20 @@ dnf swap -y ptyxis still-terminal
 
 echo "Installing stillOS Packages"
 dnf install -y https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/35.0/1.el10_2/noarch/gnome-shell-extension-just-perfection-35.0-1.el10_2.noarch.rpm
-dnf install -y rsms-inter-fonts rsms-inter-vf-fonts still-control stillcenter swai swai-inst stillcount-client adw-gtk3-theme gnome-shell-extension-desktop-icons-ng gnome-shell-extension-appindicator stillexplore  gnome-shell-extension-sam quick-setup
+dnf install -y rsms-inter-fonts rsms-inter-vf-fonts still-control stillcenter swai swai-inst stillcount-client adw-gtk3-theme gnome-shell-extension-desktop-icons-ng gnome-shell-extension-appindicator stillexplore quick-setup still-zsh
 
 echo "Installing misc packages..."
 dnf install -y git lorax \
     distrobox \
     fuse \
     xdg-utils \
-    glib2-devel
+    glib2-devel \
+    ntfs-3g \
+    exfat-utils \
+    wireguard-tools \
+    NetworkManager-openvpn-gnome \
+    lldb \
+    gdb
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
@@ -35,6 +41,9 @@ dnf autoremove
 
 # Disable Command Not Found PackageKit
 sed -i -e 's/^SoftwareSourceSearch=true/SoftwareSourceSearch=false/' /etc/PackageKit/CommandNotFound.conf
+
+# Turn on ZSH
+sudo sed -i 's|^SHELL=.*|SHELL=/bin/zsh|' /etc/default/useradd
 
 systemctl disable rpm-ostree-countme.service
 systemctl enable stillcount.service
