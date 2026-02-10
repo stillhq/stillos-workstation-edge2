@@ -16,19 +16,31 @@ dnf swap -y mutter https://download.copr.fedorainfracloud.org/results/still/stil
 dnf swap -y gnome-session-wayland-session stillos-session
 dnf swap -y ptyxis still-terminal
 
-echo "Installing stillOS Packages"
-dnf install -y https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/35.0/1.el10_2/noarch/gnome-shell-extension-just-perfection-35.0-1.el10_2.noarch.rpm
-dnf install -y https://kojipkgs.fedoraproject.org//packages/micro/2.0.11/10.fc41/x86_64/micro-2.0.11-10.fc41.x86_64.rpm
-dnf install -y rsms-inter-fonts rsms-inter-vf-fonts still-control stillcenter swai swai-inst stillcount-client adw-gtk3-theme gnome-shell-extension-desktop-icons-ng gnome-shell-extension-appindicator stillexplore quick-setup still-zsh
-
-echo "Installing misc packages..."
-dnf install -y git lorax \
+echo "Installing all system packages..."
+dnf install -y \
+    https://kojipkgs.fedoraproject.org//packages/gnome-shell-extension-just-perfection/35.0/1.el10_2/noarch/gnome-shell-extension-just-perfection-35.0-1.el10_2.noarch.rpm \
+    https://kojipkgs.fedoraproject.org//packages/micro/2.0.11/10.fc41/x86_64/micro-2.0.11-10.fc41.x86_64.rpm \
+    rsms-inter-fonts \
+    rsms-inter-vf-fonts \
+    still-control \
+    stillcenter \
+    swai \
+    swai-inst \
+    stillcount-client \
+    adw-gtk3-theme \
+    gnome-shell-extension-desktop-icons-ng \
+    gnome-shell-extension-appindicator \
+    stillexplore \
+    quick-setup \
+    still-zsh \
+    git \
+    lorax \
     distrobox \
     fuse \
     xdg-utils \
     glib2-devel \
     ntfs-3g \
-    exfat-utils \
+    exfatprogs \
     wireguard-tools \
     NetworkManager-openvpn-gnome \
     lldb \
