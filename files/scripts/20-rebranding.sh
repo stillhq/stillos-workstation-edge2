@@ -20,4 +20,4 @@ curl \
     https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Enable sudo password bubbles
-echo 'Defaults pwfeedback' | sudo tee /etc/sudoers.d/pwfeedback
+echo 'Defaults pwfeedback' | tee /etc/sudoers.d/pwfeedback
