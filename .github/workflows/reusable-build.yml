@@ -62,8 +62,7 @@ jobs:
       image-path: ${{ inputs.image-path }}
       REGISTRY: ${{ inputs.registry }}
       REGISTRY_USER: ${{ inputs.registry-user }}
-      build-args: |
-        VARIANT=${{ inputs.variant }}
+      variant: ${{ inputs.variant }}
     secrets:
       REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
       SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
