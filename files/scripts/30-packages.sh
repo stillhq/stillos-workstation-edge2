@@ -52,13 +52,8 @@ dnf remove firefox -y
 dnf config-manager --save --setopt=exclude=firefox
 dnf autoremove
 
-# Disable Command Not Found PackageKit
-sed -i -e 's/^SoftwareSourceSearch=true/SoftwareSourceSearch=false/' /etc/PackageKit/CommandNotFound.conf
-
-# Turn on ZSH
-sed -i 's|^SHELL=.*|SHELL=/bin/zsh|' /etc/default/useradd
-
-systemctl disable rpm-ostree-countme.service
-systemctl enable stillcount.service
-systemctl enable sam.service
-
+# NVIDIA Drivers
+if [[ "${VARIANT}" == "nvidia" ]]; then
+    dnf install akmod-nvidia # rhel/centos users can use kmod-nvidia instead
+    dnf install xorg-x11-drv-nvidia-cuda #optional for cuda/nvdec/nvenc support
+fi
