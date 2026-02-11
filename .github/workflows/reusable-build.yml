@@ -76,6 +76,8 @@ jobs:
     name: Test ${{ inputs.variant }}
     runs-on: ubuntu-latest
     needs: [build-image]
+    permissions:
+      contents: read
 
     env:
       IMAGE_REF: "${{ needs.build-image.outputs.image-ref }}@${{ needs.build-image.outputs.digest }}"
