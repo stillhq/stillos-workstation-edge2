@@ -41,7 +41,7 @@ jobs:
           SIGNING_SECRET: ${{ secrets.SIGNING_SECRET }}
 
   build-test-promote:
-    name: Build, Test, Promote - ${{ matrix.variant }}
+    name: Build, Test, Promote - ${{ matrix.variant || 'default' }}
     needs: set-env
     strategy:
       fail-fast: false
@@ -50,8 +50,8 @@ jobs:
     with:
       variant: ${{ matrix.variant }}
       containerfile: Dockerfile
-      image-name: "${{ needs.set-env.outputs.IMAGE_NAME }}-${{ matrix.variant }}"
-      previous-image: "${{ needs.set-env.outputs.IMAGE_REF }}-${{ matrix.variant }}:latest"
+      image-name: "${{ needs.set-env.outputs.IMAGE_NAME }}${{ matrix.variant && format('-{0}', matrix.variant) || '' }}"
+      previous-image: "${{ needs.set-env.outputs.IMAGE_REF }}${{ matrix.variant && format('-{0}', matrix.variant) || '' }}:latest"
       latest-tag: ${{ needs.set-env.outputs.LATEST_TAG }}
       platforms: ${{ needs.set-env.outputs.PLATFORMS }}
       image-path: ${{ needs.set-env.outputs.IMAGE_PATH }}

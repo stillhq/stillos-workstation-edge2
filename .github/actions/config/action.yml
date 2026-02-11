@@ -61,7 +61,8 @@ runs:
         IMAGE_PATH=${{ github.repository_owner }}
         IMAGE_NAME=stillos-workstation-edge
         PLATFORMS="amd64"
-        VARIANTS="workstation,workstation-nvidia"
+        # Variants: empty string for default (no suffix), then other variant names
+        VARIANTS=",nvidia"
 
         echo "REGISTRY=${REGISTRY}" >> $GITHUB_OUTPUT
         echo "REGISTRY_USER=${REGISTRY_USER}" >> $GITHUB_OUTPUT
