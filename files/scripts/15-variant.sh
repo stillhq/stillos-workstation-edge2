@@ -17,10 +17,7 @@ elif [[ "${VARIANT}" == "nvidia" ]]; then
     # Install NVIDIA drivers and related packages
     dnf install -y \
         akmod-nvidia \
-        xorg-x11-drv-nvidia-cuda \
-        nvidia-vaapi-driver \
-        libva-utils \
-        vdpauinfo
+        xorg-x11-drv-nvidia-cuda
 
 else
     echo "Unknown variant: ${VARIANT}"
