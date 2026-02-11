@@ -2,7 +2,7 @@
 
 set -xeuo pipefail
 
-if [[ "${VARIANT}" == "" ]]; then
+if [[ -z "${VARIANT}" ]]; then
     echo "Building base variant (no additional packages)"
     # No additional packages for base variant
 
