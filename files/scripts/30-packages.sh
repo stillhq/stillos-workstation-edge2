@@ -23,6 +23,7 @@ dnf install -y \
     rsms-inter-fonts \
     rsms-inter-vf-fonts \
     still-control \
+    still-terminal-nautilus \
     stillcenter \
     swai \
     swai-inst \
