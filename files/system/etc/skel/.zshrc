@@ -29,7 +29,7 @@ fi
 
 # syntax highlighting last (separate package)
 if [ -d /usr/share/zsh-fast-syntax-highlighting ]; then
-  source /usr/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.zsh
+  source /usr/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 
 # Plugin Credits (some are slightly modified):
