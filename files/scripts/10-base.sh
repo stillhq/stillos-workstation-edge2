@@ -9,4 +9,7 @@ dnf config-manager --save --setopt=exclude=PackageKit,PackageKit-command-not-fou
 dnf config-manager --add-repo https://gitlab.com/stillhq/stillOS/packages/stillos-release-final/-/raw/a10/stillos-alma.repo
 dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
 
+# KVM
+dnf -y copr enable ligenix/enterprise-qemu-spice
+
 dnf install -y shim-x64
