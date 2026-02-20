@@ -52,7 +52,8 @@ dnf install -y \
     virt-install \
     virt-top \
     bridge-utils \
-    libguestfs-tools
+    libguestfs-tools \
+    virt-manager
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
