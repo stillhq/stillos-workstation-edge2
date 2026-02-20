@@ -7,7 +7,8 @@ dnf install -y --nobest  \
     @development \
     @legacy-unix \
     @rpm-development-tools \
-    @system-tools
+    @system-tools \
+    @virt
 
 echo "Swapping GNOME"
 dnf remove -y gnome-shell-extension-background-logo
@@ -45,7 +46,14 @@ dnf install -y \
     wireguard-tools \
     NetworkManager-openvpn-gnome \
     lldb \
-    gdb
+    gdb \
+    qemu-kvm \
+    libvirt \
+    libvirt-client \
+    virt-install \
+    virt-top \
+    bridge-utils \
+    libguestfs-tools
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
