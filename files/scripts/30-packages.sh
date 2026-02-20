@@ -7,8 +7,7 @@ dnf install -y --nobest  \
     @development \
     @legacy-unix \
     @rpm-development-tools \
-    @system-tools \
-    @virt
+    @system-tools
 
 echo "Swapping GNOME"
 dnf remove -y gnome-shell-extension-background-logo
