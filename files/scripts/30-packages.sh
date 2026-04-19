@@ -46,15 +46,12 @@ dnf install -y \
     NetworkManager-openvpn-gnome \
     lldb \
     gdb \
-    qemu-kvm \
-    libvirt \
-    libvirt-client \
-    virt-install \
-    virt-top \
-    bridge-utils \
-    libguestfs-tools \
-    virt-manager \
-    epiphany
+    epiphany \
+    broadcom-wl
+
+# Disabling broadcom WiFi drivers
+ln -sf /dev/null /etc/modprobe.d/broadcom-wl-blacklist.conf
+bash -c 'echo "blacklist wl" > /etc/modprobe.d/default-disable-broadcom-wl.conf'
 
 # Removing Unused Software
 dnf remove -y gnome-software gnome-tour gnome-extensions-app
