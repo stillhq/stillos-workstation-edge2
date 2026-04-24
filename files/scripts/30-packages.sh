@@ -47,7 +47,8 @@ dnf install -y \
     lldb \
     gdb \
     epiphany \
-    broadcom-wl
+    broadcom-wl \
+    webkit2gtk4.1
 
 # Disabling broadcom WiFi drivers
 ln -sf /dev/null /etc/modprobe.d/broadcom-wl-blacklist.conf
