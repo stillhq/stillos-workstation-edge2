@@ -109,7 +109,7 @@ jobs:
     name: Promote ${{ inputs.variant }}
     needs: [build-image, test-image]
     if: ${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}
-    uses: AlmaLinux/atomic-ci/.github/workflows/retag-image.yml@v11
+    uses: AlmaLinux/atomic-ci/.github/workflows/retag-image.yml@v13
     with:
       image: ${{ needs.build-image.outputs.image-ref }}
       digest: ${{ needs.build-image.outputs.digest }}
