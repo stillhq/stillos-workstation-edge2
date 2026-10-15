@@ -54,7 +54,7 @@ on:
 jobs:
   build-image:
     name: Build ${{ inputs.variant }}
-    uses: AlmaLinux/atomic-ci/.github/workflows/build-image.yml@v11
+    uses: AlmaLinux/atomic-ci/.github/workflows/build-image.yml@v13
     with:
       generate-sbom: false
       image-description: "stillOS Main Base Image - ${{ inputs.variant }} variant"
